@@ -3,10 +3,10 @@
 }
 
 html {
-    color: #333;    
+    color: #333;
     font-family: monospace;
     font-size: 16px;
-    line-height: 200%;
+    line-height: 22px;
 }
 
 body {
@@ -16,6 +16,13 @@ body {
     word-wrap : break-word;
 }
 
+h1 {
+    padding-bottom: 0.3em;
+    line-height: 1.2;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
 time {
     color: var(--color-light);
     display: block;
@@ -23,18 +30,17 @@ time {
 }
   
 nav ul {
-    display: inline-block;
+    display: inline;
     list-style-type: none;
-    padding: 0;    
 }
   
 .articles {
     padding-left: 0;
-    list-style-type: none;    
+    list-style-type: none;
 }
 
 footer {
     padding: 20px;
-    font-size: 0.8em;    
+    font-size: 0.8em;
     padding-left: 0;
 }
