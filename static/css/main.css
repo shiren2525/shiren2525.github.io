@@ -1,0 +1,40 @@
+:root {
+    --color-light: #666;
+}
+
+html {
+    color: #333;    
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 200%;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 36rem;
+    padding: 2rem 0rem 4rem;
+    word-wrap : break-word;
+}
+
+time {
+    color: var(--color-light);
+    display: block;
+    font-size: 0.8rem;
+}
+  
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0;    
+}
+  
+.articles {
+    padding-left: 0;
+    list-style-type: none;    
+}
+
+footer {
+    padding: 20px;
+    font-size: 0.8em;    
+    padding-left: 0;
+}
