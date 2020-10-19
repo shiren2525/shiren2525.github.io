@@ -9,6 +9,14 @@ html {
     line-height: 22px;
 }
 
+@media (min-width: 1000px) {
+    html {
+        font-size: 16px;
+        margin: 0 auto;
+        max-width: 36rem;
+    }
+}
+
 body {
     margin: 0 auto;
     max-width: 36rem;
