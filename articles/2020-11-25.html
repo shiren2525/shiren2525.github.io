@@ -2,477 +2,472 @@
 <html>
 
 <head>
-	<title>シレンのアトリエ</title>
-	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-	<link rel="icon" type="image/png" href="../Shiren.GitHub.io/static/images_icon/icon_totori.png" sizes="192x192">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@shiren2525" />
-	<meta property="og:title" content="ライディングデュエル。それはスピードの世界で進化したデュエル。そこに命をかける伝説の痣を持つ者を人々は5D'sと呼んだ。" />
-	<meta property="og:image" content="https://pbs.twimg.com/profile_images/1196387638514573313/N86tYquD_400x400.png" />
-
-	<style>
-		/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-		/*---------------------------------------------------------------------------------------------
+  <title>シレンのアトリエ</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <link rel="icon" type="image/png" href="../Shiren.GitHub.io/static/images_icon/icon_totori.png" sizes="192x192">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shiren2525" />
+  <meta property="og:title" content="シレンのアトリエ" />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/1196387638514573313/N86tYquD_400x400.png" />
+  
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-		#code-csp-warning {
-			position: fixed;
-			top: 0;
-			right: 0;
-			color: white;
-			margin: 16px;
-			text-align: center;
-			font-size: 12px;
-			font-family: sans-serif;
-			background-color: #444444;
-			cursor: pointer;
-			padding: 6px;
-			box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
-		}
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
 
-		#code-csp-warning:hover {
-			text-decoration: none;
-			background-color: #007acc;
-			box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
-		}
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
 
-		body.scrollBeyondLastLine {
-			margin-bottom: calc(100vh - 22px);
-		}
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
 
-		body.showEditorSelection .code-line {
-			position: relative;
-		}
+body.showEditorSelection .code-line {
+	position: relative;
+}
 
-		body.showEditorSelection .code-active-line:before,
-		body.showEditorSelection .code-line:hover:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -12px;
-			height: 100%;
-		}
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
 
-		body.showEditorSelection li.code-active-line:before,
-		body.showEditorSelection li.code-line:hover:before {
-			left: -30px;
-		}
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
 
-		.vscode-light.showEditorSelection .code-active-line:before {
-			border-left: 3px solid rgba(0, 0, 0, 0.15);
-		}
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
 
-		.vscode-light.showEditorSelection .code-line:hover:before {
-			border-left: 3px solid rgba(0, 0, 0, 0.40);
-		}
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
 
-		.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-			border-left: none;
-		}
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
 
-		.vscode-dark.showEditorSelection .code-active-line:before {
-			border-left: 3px solid rgba(255, 255, 255, 0.4);
-		}
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
 
-		.vscode-dark.showEditorSelection .code-line:hover:before {
-			border-left: 3px solid rgba(255, 255, 255, 0.60);
-		}
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
 
-		.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-			border-left: none;
-		}
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
 
-		.vscode-high-contrast.showEditorSelection .code-active-line:before {
-			border-left: 3px solid rgba(255, 160, 0, 0.7);
-		}
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
 
-		.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-			border-left: 3px solid rgba(255, 160, 0, 1);
-		}
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
 
-		.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-			border-left: none;
-		}
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
 
-		img {
-			backface-visibility: hidden;
-			display: block;
-			margin: 2rem auto;
-			max-width: 100%;
-			max-height: 100%;
-		}
+img {
+	backface-visibility: hidden;
+	display: block;
+	margin: 2rem auto;
+	max-width: 100%;
+	max-height: 100%;
+}
 
-		a:hover {
-			text-decoration: underline;
-		}
+a:hover {
+	text-decoration: underline;
+}
 
-		a:focus,
-		input:focus,
-		select:focus,
-		textarea:focus {
-			outline: 1px solid -webkit-focus-ring-color;
-			outline-offset: -1px;
-		}
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
 
-		hr {
-			border: 0;
-			height: 2px;
-			border-bottom: 2px solid;
-		}
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
 
-		h1 {
-			font-family: monospace;
-			padding-bottom: 0.3em;
-			line-height: 1.2;
-			border-bottom-width: 2px;
-			border-bottom-style: solid;
-		}
+h1 {
+	font-family: monospace;
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
 
-		table {
-			border-collapse: collapse;
-		}
+table {
+	border-collapse: collapse;
+}
 
-		table>thead>tr>th {
-			text-align: left;
-			border-bottom: 1px solid;
-		}
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
 
-		table>thead>tr>th,
-		table>thead>tr>td,
-		table>tbody>tr>th,
-		table>tbody>tr>td {
-			padding: 5px 10px;
-		}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
 
-		table>tbody>tr+tr>td {
-			border-top: 1px solid;
-		}
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
 
-		blockquote {
-			margin: 0 7px 0 5px;
-			padding: 0 16px 0 10px;
-			border-left-width: 5px;
-			border-left-style: solid;
-		}
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
 
-		code {
-			font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-			font-size: 1em;
-			line-height: 1.357em;
-		}
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
 
-		body.wordWrap pre {
-			white-space: pre-wrap;
-		}
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
 
-		pre:not(.hljs),
-		pre.hljs code>div {
-			padding: 16px;
-			border-radius: 3px;
-			overflow: auto;
-		}
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
 
-		pre code {
-			color: var(--vscode-editor-foreground);
-			tab-size: 4;
-		}
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
 
-		/** Theming */
+/** Theming */
 
-		.vscode-light pre {
-			background-color: rgba(220, 220, 220, 0.4);
-		}
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
 
-		.vscode-dark pre {
-			background-color: rgba(10, 10, 10, 0.4);
-		}
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
 
-		.vscode-high-contrast pre {
-			background-color: rgb(0, 0, 0);
-		}
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
 
-		.vscode-high-contrast h1 {
-			border-color: rgb(0, 0, 0);
-		}
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
 
-		.vscode-light table>thead>tr>th {
-			border-color: rgba(0, 0, 0, 0.69);
-		}
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
 
-		.vscode-dark table>thead>tr>th {
-			border-color: rgba(255, 255, 255, 0.69);
-		}
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
 
-		.vscode-light h1,
-		.vscode-light hr,
-		.vscode-light table>tbody>tr+tr>td {
-			border-color: rgba(0, 0, 0, 0.18);
-		}
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
 
-		.vscode-dark h1,
-		.vscode-dark hr,
-		.vscode-dark table>tbody>tr+tr>td {
-			border-color: rgba(255, 255, 255, 0.18);
-		}
-	</style>
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
 
-	<style>
-		/* Tomorrow Theme */
-		/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-		/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+</style>
 
-		/* Tomorrow Comment */
-		.hljs-comment,
-		.hljs-quote {
-			color: #8e908c;
-		}
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
 
-		/* Tomorrow Red */
-		.hljs-variable,
-		.hljs-template-variable,
-		.hljs-tag,
-		.hljs-name,
-		.hljs-selector-id,
-		.hljs-selector-class,
-		.hljs-regexp,
-		.hljs-deletion {
-			color: #c82829;
-		}
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
 
-		/* Tomorrow Orange */
-		.hljs-number,
-		.hljs-built_in,
-		.hljs-builtin-name,
-		.hljs-literal,
-		.hljs-type,
-		.hljs-params,
-		.hljs-meta,
-		.hljs-link {
-			color: #f5871f;
-		}
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
 
-		/* Tomorrow Yellow */
-		.hljs-attribute {
-			color: #eab700;
-		}
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
 
-		/* Tomorrow Green */
-		.hljs-string,
-		.hljs-symbol,
-		.hljs-bullet,
-		.hljs-addition {
-			color: #718c00;
-		}
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
 
-		/* Tomorrow Blue */
-		.hljs-title,
-		.hljs-section {
-			color: #4271ae;
-		}
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
 
-		/* Tomorrow Purple */
-		.hljs-keyword,
-		.hljs-selector-tag {
-			color: #8959a8;
-		}
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
 
-		.hljs {
-			display: block;
-			overflow-x: auto;
-			color: #4d4d4c;
-			padding: 0.5em;
-		}
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
 
-		.hljs-emphasis {
-			font-style: italic;
-		}
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
 
-		.hljs-strong {
-			font-weight: bold;
-		}
-	</style>
+.hljs-emphasis {
+	font-style: italic;
+}
 
-	<style>
-		/*
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
  * Markdown PDF CSS
  */
 
-		html {
-			color: #333;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-			font-size: 16px;
-			line-height: 1.5;
-		}
+ html {
+    color: #333;    
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+    font-size: 16px;
+    line-height: 1.5;
+}
 
-		@media (min-width: 1000px) {
-			html {
-				font-size: 16px;
-				margin: 0 auto;
-				max-width: 36rem;
-			}
-		}
+@media (min-width: 1000px) {
+	html {
+		font-size: 16px;
+		margin: 0 auto;
+		max-width: 36rem;
+	}
+}
 
-		@media (prefers-color-scheme: dark) {
-			body {
-				background-color: #121212;
-				color: #d9d9d9;
-			}
+@media (prefers-color-scheme: dark) {
+	body {
+	  background-color: #121212;
+	  color: #d9d9d9;
+	}
+	a {
+	  color: #1DA1F2;
+	}
+	img {
+	  filter: grayscale(30%);
+	}
+  }
 
-			a {
-				color: #1DA1F2;
-			}
+ body {
+	margin: 0 auto;
+	max-width: 64rem;
+	padding: 2rem 1rem 4rem;
+    word-wrap : break-word;
+}
 
-			img {
-				filter: grayscale(30%);
-			}
-		}
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
 
-		body {
-			margin: 0 auto;
-			max-width: 64rem;
-			padding: 2rem 1rem 4rem;
-			word-wrap: break-word;
-		}
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
 
-		pre {
-			background-color: #f8f8f8;
-			border: 1px solid #cccccc;
-			border-radius: 3px;
-			overflow-x: auto;
-			white-space: pre-wrap;
-			overflow-wrap: break-word;
-		}
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
 
-		pre:not(.hljs) {
-			padding: 23px;
-			line-height: 19px;
-		}
+.emoji {
+	height: 1.4em;
+}
 
-		blockquote {
-			background: rgba(127, 127, 127, 0.1);
-			border-color: rgba(0, 122, 204, 0.5);
-		}
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
 
-		.emoji {
-			height: 1.4em;
-		}
+time {
+    color: var(--color-light);
+    display: block;
+    font-size: 0.8rem;
+}
+  
+nav ul {
+	font-family: monospace;
+    display: inline;
+    list-style-type: none;
+}
 
-		code {
-			font-size: 14px;
-			line-height: 19px;
-		}
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
 
-		time {
-			color: var(--color-light);
-			display: block;
-			font-size: 0.8rem;
-		}
-
-		nav ul {
-			font-family: monospace;
-			display: inline;
-			list-style-type: none;
-		}
-
-		/* for inline code */
-		:not(pre):not(.hljs)>code {
-			color: #C9AE75;
-			/* Change the old color so it seems less like an error */
-			font-size: inherit;
-		}
-
-		/* Page Break : use <div class="page"/> to insert page break
+/* Page Break : use <div class="page"/> to insert page break
 -------------------------------------------------------- */
-		.page {
-			page-break-after: always;
-		}
-	</style>
+.page {
+	page-break-after: always;
+}
 
-	<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+
+</style>
+
+  <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 
 <body>
-	<script>
-		mermaid.initialize({
-			startOnLoad: true,
-			theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-				? 'dark'
-				: 'default'
-		});
-	</script>
-	<header>
-		<nav>
-			<ul>
-				<li>
-					<a href="../index.html">Shiren2525.com</a>
-					<a href="../list_articles.html">articles</a>
-					<a href="../profile.html">profile</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<h1
-		id="%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%87%E3%83%A5%E3%82%A8%E3%83%AB%E3%81%9D%E3%82%8C%E3%81%AF%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%81%AE%E4%B8%96%E7%95%8C%E3%81%A7%E9%80%B2%E5%8C%96%E3%81%97%E3%81%9F%E3%83%87%E3%83%A5%E3%82%A8%E3%83%AB%E3%81%9D%E3%81%93%E3%81%AB%E5%91%BD%E3%82%92%E3%81%8B%E3%81%91%E3%82%8B%E4%BC%9D%E8%AA%AC%E3%81%AE%E7%97%A3%E3%82%92%E6%8C%81%E3%81%A4%E8%80%85%E3%82%92%E4%BA%BA%E3%81%AF5ds%E3%81%A8%E5%91%BC%E3%82%93%E3%81%A0">
-		ライディングデュエル。それはスピードの世界で進化したデュエル。そこに命をかける伝説の痣を持つ者を人々は5D'sと呼んだ。</h1>
-	<p>尊敬する人?
-		もちろん不動遊星だ。
-		上級国民の血を引き継いだものの、産まれて間もなく底辺へと転落した彼は、スラムで育つことになる。
-		さらに、赤き龍の痣を持ってしまった彼は、人類を新たなステージへと導く使命をも背負うことになる。
-		これはそんな彼が未来を切り拓いた末に発した言葉である。</p>
-	<blockquote>
-		<p>絆は絆さ、それに揺るぎはない。けれど、俺たちがこれから進んでいく未来は絆だけでどうにかなるものじゃない。自分の人生は自分で責任を持って、生きていかなくてはならない。それが今なんだ。俺たちはそれぞれ次のステージに進むんだよ。
-		</p>
-	</blockquote>
-	<p>絆をテーマにした子供向けアニメでありながら、最後にはその絆だけでは生きられないことを教えてくれる。
-		その絆で革命するだけで終わらないところが推せるんだ。
-		まあ他のヤンキーアニメの勉強はしていないんだけど。</p>
-	<h2
-		id="%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AB%E3%82%82%E5%B0%8A%E6%95%AC%E3%81%A7%E3%81%8D%E3%82%8B%E4%BA%BA%E3%81%AF%E3%81%84%E3%81%9F">
-		リアルワールドにも尊敬できる人はいた。</h2>
-	<p><strong>&quot;元GAFA&quot;</strong></p>
-	<p>最近、意識高い系さんの間で流行している称号らしい。
-		ぼくも日々、勉強させていただいている。</p>
-	<p>しかし彼らのような自称の称号ではなく、実際に元GAFAに勤務されていた方々も存在するのである。
-		そのレベルに到達している、ある人を尊敬している。</p>
-	<p>彼を一言で説明するならばイノベーターなのだが、分かりやすく言うとレベルの高いYouTuberだ。
-		&quot;なんたら やってみた&quot;系の動画は、つまり早い段階で製品を試してくれるので、情報量が多くなって助かるのがいいところである。
-		それを脳死で信じる層を広告の対象にするのが、インフルエンサーの仕事である。
-		そんな層が鴨になるのだから、必然的にレベルは低くなってしまう。</p>
-	<p>しかし彼はまるでYouTuberのように、無限の財力によっていろんな技術を試してツイートしてくれる。
-		だからそれを観察するのが楽しかったのだ。
-		元々Twitterには、人間観察の側面もあるが、彼はもっと重要なことを教えてくれたんだ。</p>
-	<p>なにかをすれば必ず失敗してしまう。
-		しかしそれを「やってみた」レベルで考えれば、恥ずかしくない。
-		むしろ人生経験を積み放題になるのだと。
-		ぼくは彼のツイートからそんなことを感じていたのだ。
-		だから僕はこれから無限の経験を積んでいきたいと思う、そしてあらゆる未経験コンプを克服する。</p>
-	<h2 id="sns-%E8%84%B1%E5%8D%B4">SNS 脱却</h2>
-	<p>そんな彼のツイートが流れてこなくなっていた。
-		安否が心配になった僕は、プロフィールを確認することにした。</p>
-	<blockquote>
-		<p>SNSから離脱して、サブスクサービスに移行する。</p>
-	</blockquote>
-	<p>そんなツイートが固定してあった。
-		おそらく無数のマウントに悩まされていたのだろう。
-		「やってみた」レベルでは、簡単にマウントできてしまうからだ。
-		その道の専門家だけでなく、ググって出てきたことですらマウントできるのだ。
-		そもそも別ベクトルでマウントしてしまえばいいのである。
-		まさに地獄。</p>
-	<p>今や無限の底辺がSNSに湧く時代である。
-		欧州ではこのSNSから離脱することが流行っているそうだ。(シレン調べ)
-		ぼくが語る場所をここに移行したことからも、肯けるであろう。
-		有料でこそないが、リンクを辿らないといけないあたり、深い興味のある人でなければ読めないのだ。
-		退屈だからマウントしようレベルの思想では、たどり着けないのだ。
-		もちろんこれは、ぼくの想像を絶する暇を持て余している人がいなければの話だ。</p>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+        ? 'dark'
+        : 'default'
+    });
+  </script>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Shiren2525.com</a>
+          <a href="../list_articles.html">articles</a>
+          <a href="../profile.html">profile</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h1 id="%E3%83%A9%E3%82%A4%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%83%87%E3%83%A5%E3%82%A8%E3%83%AB%E3%81%9D%E3%82%8C%E3%81%AF%E3%82%B9%E3%83%94%E3%83%BC%E3%83%89%E3%81%AE%E4%B8%96%E7%95%8C%E3%81%A7%E9%80%B2%E5%8C%96%E3%81%97%E3%81%9F%E3%83%87%E3%83%A5%E3%82%A8%E3%83%AB%E3%81%9D%E3%81%93%E3%81%AB%E5%91%BD%E3%82%92%E3%81%8B%E3%81%91%E3%82%8B%E4%BC%9D%E8%AA%AC%E3%81%AE%E7%97%A3%E3%82%92%E6%8C%81%E3%81%A4%E8%80%85%E3%82%92%E4%BA%BA%E3%81%AF5ds%E3%81%A8%E5%91%BC%E3%82%93%E3%81%A0">ライディングデュエル。それはスピードの世界で進化したデュエル。そこに命をかける伝説の痣を持つ者を人々は5D'sと呼んだ。</h1>
+<p>尊敬する人?
+もちろん不動遊星だ。
+上級国民の血を引き継いだものの、産まれて間もなく底辺へと転落した彼は、スラムで育つ。
+さらに、赤き龍の痣を持ってしまった彼は、人類を新たなステージへと導く使命をも背負うことになる。
+これはそんな彼が未来を切り拓いた末に発した言葉である。</p>
+<blockquote>
+<p>絆は絆さ、それに揺るぎはない。けれど、俺たちがこれから進んでいく未来は絆だけでどうにかなるものじゃない。自分の人生は自分で責任を持って、生きていかなくてはならない。それが今なんだ。俺たちはそれぞれ次のステージに進むんだよ。</p>
+</blockquote>
+<p>絆をテーマにした子供向けアニメでありながら、最後にはその絆だけでは生きられないことを教えてくれる。
+その絆で革命するだけで終わらないところが推せるんだ。
+まあ他のヤンキーアニメの勉強はしていないんだけど。</p>
+<h1 id="%E3%83%AA%E3%82%A2%E3%83%AB%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%E3%81%AB%E3%82%82%E5%B0%8A%E6%95%AC%E3%81%A7%E3%81%8D%E3%82%8B%E4%BA%BA%E3%81%AF%E3%81%84%E3%81%9F">リアルワールドにも尊敬できる人はいた。</h1>
+<p><strong>&quot;元GAFA&quot;</strong></p>
+<p>最近、意識高い系さんの間で流行している称号らしい。
+ぼくも日々、勉強させていただいている。</p>
+<p>しかし彼らのような自称の称号ではなく、実際に元GAFAに勤務されていた方々も存在するのである。
+そのレベルに到達している、ある人を尊敬している。</p>
+<p>彼を一言で説明するならばイノベーターなのだが、分かりやすく言うとレベルの高いYouTuberだ。
+&quot;なんたら やってみた&quot;系の動画は、つまり早い段階で製品を試してくれるので、情報量が多くなって助かるのがいいところである。
+それを脳死で信じる層を広告の対象にするのが、インフルエンサーの仕事である。
+そんな層が鴨になるのだから、必然的にレベルは低くなってしまう。</p>
+<p>しかし彼はまるでYouTuberのように、無限の財力によっていろんな技術を試してツイートしてくれる。
+だからそれを観察するのが楽しかったのだ。
+元々Twitterには、人間観察の側面もあるが、彼はもっと重要なことを教えてくれたんだ。</p>
+<p>なにかをすれば必ず失敗してしまう。
+しかしそれを「やってみた」レベルで考えれば、恥ずかしくない。
+むしろ人生経験を積み放題になるのだと。
+ぼくは彼のツイートからそんなことを感じていたのだ。
+だから僕はこれから無限の経験を積んでいきたいと思う、そしてあらゆる未経験コンプを克服する。</p>
+<h1 id="sns-%E8%84%B1%E5%8D%B4">SNS 脱却</h1>
+<p>そんな彼のツイートが流れてこなくなっていた。
+安否が心配になった僕は、プロフィールを確認することにした。</p>
+<blockquote>
+<p>SNSから離脱して、サブスクサービスに移行する。</p>
+</blockquote>
+<p>そんなツイートが固定してあった。
+おそらく無数のマウントに悩まされていたのだろう。
+「やってみた」レベルでは、簡単にマウントできてしまうからだ。
+その道の専門家だけでなく、ググって出てきたことですらマウントできるのだ。
+そもそも別ベクトルでマウントしてしまえばいいのである。
+まさに地獄。</p>
+<p>今や無限の底辺がSNSに湧く時代である。
+欧州ではこのSNSから離脱することが流行っているそうだ。(シレン調べ)
+ぼくが語る場所をここに移行したことからも、肯けるであろう。
+有料でこそないが、リンクを辿らないといけないあたり、深い興味のある人でなければ読めないのだ。
+退屈だからマウントしようレベルの思想では、たどり着けないのだ。
+もちろんこれは、ぼくの想像を絶する暇を持て余している人がいなければの話だ。</p>
 
 </body>
 <footer>
-	<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-count="horizontal"
-		data-size="large">Tweet</a>
-	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-count="horizontal"
+    data-size="large">Tweet</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </footer>
 
 </html>
