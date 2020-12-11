@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>シレンのアトリエ</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <link rel="icon" type="image/png" href="../static/images_icon/icon_totori.png" sizes="192x192">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shiren2525" />
+  <meta property="og:title" content="シレンのアトリエ" />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/1196387638514573313/N86tYquD_400x400.png" />
+  
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	backface-visibility: hidden;
+	display: block;
+	margin: 2rem auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	font-family: monospace;
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ html {
+    color: #333;    
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+@media (min-width: 1000px) {
+	html {
+		font-size: 16px;
+		margin: 0 auto;
+		max-width: 36rem;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+	  background-color: #121212;
+	  color: #d9d9d9;
+	}
+	a {
+	  color: #1DA1F2;
+	}
+	img {
+	  filter: grayscale(30%);
+	}
+  }
+
+ body {
+	margin: 0 auto;
+	max-width: 64rem;
+	padding: 2rem 1rem 4rem;
+    word-wrap : break-word;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+time {
+    color: var(--color-light);
+    display: block;
+    font-size: 0.8rem;
+}
+  
+nav ul {
+	font-family: monospace;
+    display: inline;
+    list-style-type: none;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+
+</style>
+
+  <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+        ? 'dark'
+        : 'default'
+    });
+  </script>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Shiren2525.com</a>
+          <a href="../list_articles.html">articles</a>
+          <a href="../profile.html">profile</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h1 id="%E9%9D%9E%E6%AD%A3%E8%A6%8F%E9%9B%87%E7%94%A8%E3%81%AB%E3%82%A8%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F">非正規雇用にエントリーしてみた。</h1>
+<p>「社会復帰してところで、また引退することになる。」
+そう語るのはニート歴1年にも満たない独身異常男性だ。
+彼は社会が厳しいものであると聞かされ、そこで自分の実力が通用するはずがないと考えているそうだ。</p>
+<p>そこで引退した先に何が待っているのかを経験しておくことで、引退を我慢できるようになろうと考えたわけだ。
+つまり非正規雇用の現場を再び体験しようということだ。</p>
+<p>過去に5度のアルバイトを経験してきたが、そこで必ず言われることが2つあった。</p>
+<p>「男なのに力が弱いなー」</p>
+<p>「若いもんはあかんなー」</p>
+<p>お馴染みのフィジカルマウントと、年齢マウントである。
+どうしてIQマウントには配慮が必要なのに、フィジカルには無配慮なのだろうか。
+それは彼らが作り上げた思想だからである。
+教育を受けられない人が多数であった時代の思想が、洗脳によって引き継がれてきたのであろう。
+フィジカルにこそ配慮すべきなのか、生まれ持った全てのものに対して配慮すべきなのか。
+次世代の思想は何に配慮することになるのか。</p>
+<h2 id="%E5%B9%B4%E9%BD%A2%E3%83%9E%E3%82%A6%E3%83%B3%E3%83%88">年齢マウント</h2>
+<p>若いものはダメらしい。
+年齢が高いだけでも、偉そうに説教を始めるその姿は見事である。
+発言する前に階級を宣言するルールが正しいようにすら思える。(<a href="https://shiren2525.github.io/articles/2020-12-09.html">管理人の階級</a>)
+彼らが何を経験してその自信を得たのかというと、年功序列の思想である。
+彼らが生まれ育った時代の思想だ。
+それを老害の如く、更新しなかったために出来上がった自信だ。
+いや更新を適用できるはずがないのである。
+もし新たな価値観を受け入れてしまえば、無価値さに絶望することになり時代の被害者になってしまうからだ。</p>
+<p>無条件に配慮された結果の精神を成長させてあげようとも思った。
+「でも、待遇は同じですよね? むしろ社会的評価はあなたのほうが下ではないでしょうか。」
+そんなふうに僕が何も言い返さない理由は、配慮マウントするためだけではない。
+単純に彼らが無敵なのである。その場で逸脱行動をしても何のリスクも伴わないからだ。
+あまりにも強すぎる、誰も彼らには勝てない。
+だからこそ無条件に配慮する必要があるのだ。</p>
+<p>しかしその配慮も足りないように思う。
+縮まらない格差の中でわれわれはいつまで我慢できるのだろうか。</p>
+<p>逆マウント時代の到来は何年後になるのだろうか、いやすでにはじまっている。
+要配慮人間が世界を変える。</p>
+
+</body>
+<footer>
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-count="horizontal"
+    data-size="large">Tweet</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</footer>
+
+</html>
