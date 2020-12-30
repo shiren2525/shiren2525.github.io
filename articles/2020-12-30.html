@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>シレンのアトリエ</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="../static/images_icon/icon_totori.png" sizes="192x192">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shiren2525" />
+  <meta property="og:title" content="シレンのアトリエ" />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/1196387638514573313/N86tYquD_400x400.png" />
+  
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	backface-visibility: hidden;
+	display: block;
+	margin: 2rem auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	font-family: monospace;
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ html {
+    color: #333;    
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+@media (min-width: 1000px) {
+	html {
+		font-size: 16px;
+		margin: 0 auto;
+		max-width: 36rem;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+	  background-color: #121212;
+	  color: #d9d9d9;
+	}
+	a {
+	  color: #1DA1F2;
+	}
+	img {
+	  filter: grayscale(30%);
+	}
+  }
+
+ body {
+	margin: 0 auto;
+	max-width: 64rem;
+	padding: 2rem 1rem 8rem;
+    word-wrap : break-word;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+time {
+    color: var(--color-light);
+    display: block;
+    font-size: 0.8rem;
+}
+  
+nav ul {
+	font-family: monospace;
+    display: inline;
+    list-style-type: none;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+
+</style>
+
+  <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+        ? 'dark'
+        : 'default'
+    });
+  </script>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Shiren2525.com</a>
+          <a href="../list_articles.html">articles</a>
+          <a href="../profile.html">profile</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h1 id="2020%E5%B9%B4-%E8%B2%B7%E3%81%A3%E3%81%A6%E3%82%88%E3%81%8B%E3%81%A3%E3%81%9F%E3%82%82%E3%81%AE%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0top50">2020年 買ってよかったものランキングTOP50</h1>
+<p>僕は経済力に余裕があるので、50まで紹介したいと思います。</p>
+<ol>
+<li>
+<p>楽天モバイル Rakuten UN-LIMIT V</p>
+<p><img src="../static/images/1230_00.png" alt="a">
+「日本のスマホ代は た か す ぎ る  !!」と情弱煽り広告のモバイル回線。3大キャリアを選べば情弱煽りを受け、それ以外を選べば低所得煽りを受けることになる。この地獄をグルメやファッションと並べて、3大マウンティングと名付けてもいいだろう。</p>
+<p>就活をするにあたって電話番号があったほうが便利なため契約。実際、このキャンペーンがなければ、モチベがなかったに違いない。行動意欲が煽られないかどうかの観点から、ツイートができるかどうか + 未経験を脱却できるかどうかの2点に変化したからだ。しかし本当に就活を経験したといえるのだろうか。よりハイレベルな企業を目指す過程で挫折を経験することを就活と呼ぶのならば、変わらず未経験である。つまり経験したつもりになって、無意識に経験詐称をしてしまっているのである。経験の話をするときには同時にレベルの情報が必要なのかもしれない。</p>
+</li>
+<li>
+<p>Xiaomi Redmi Note 9S</p>
+<p><img src="../static/images/1230_01.png" alt="kindred">
+中華ブランド&quot;Xiaomi&quot;  イニシャル&quot;X&quot;でカッコいいな。向こうでの名称は&quot;小米&quot; なんて可愛いのだろうか。このブランドの魅力は利益を最大5%しか取らないと宣言しているところだ。そんな神域のコストパフォーマンスでシェアを伸ばし、スマホの世界シェア4位にまで浮上した。そんなブランドの中でもローエンドモデルに当たる「Redmiシリーズ」の最新モデルを購入した。</p>
+<p><img src="../static/images/1230_10.png" alt="kindred"></p>
+</li>
+<li>
+<p>Xiaomi Mi Band 5</p>
+<p><img src="../static/images/1230_02.png" alt="kindred">
+上記と同じブランド製品だ。<a href="./2020-11-18.html">これは以前にも紹介したことがある。</a>マイブームは新たな新生eSportsの睡眠スコアバトルだ。先週は自己ベスト更新の83を得点した。この記録に到達するために脱カフェインも実践している。健康煽りを回避するためにみんなも参戦しよう!!</p>
+</li>
+<li>
+<p>Xiaomi Smart Scale 2</p>
+<p><img src="../static/images/1230_03.png" alt="kindred">
+同ブランドだ。体重を測定したあとにカメラで撮影するのが面倒だったため購入。日常的に測定することで、健康を目指そうというわけだ。実際に2.5kgの増量に成功している。しかしXiaomiの情報によると筋肉量、BMI、体脂肪率の3点に注意が必要らしい。まだまだ健康への道程は長い、もはや到達は不可能にすら思える。</p>
+</li>
+<li>
+<p>League of Legends Champion skins</p>
+<p><img src="../static/images/1230_04.png" alt="kindred">
+「The Game Awards 2020」において、「Best Esports Game」を受賞したタイトルだ。これさえプレイしていればeSportsタイトル煽りを回避できる。そんなタイトルのゲーム内スキンを購入した。スキンの文化は購入するだけで簡単に満足感を得られる、購入理由を理解できてよかった。これからは積極的に購入していきたいと思う。</p>
+</li>
+<li>
+<p>ボードゲーム テラフォーミング・マーズ</p>
+<p><img src="../static/images/1230_05.png" alt="kindred">
+毎年ドイツで開催される「ドイツゲーム大賞」において、2017年に大賞を受賞した作品。それがようやく再販されたので購入(ボードゲーム業界の日本市場においては、人気タイトルは品切れが続くため)。重量級(高難易度、プレイ時間が長いなど)の中では、優しい今作は重量級を遊んでみたい人におすすめ。またジャンルも拡大再生産という、持てるリソースを消費して、生産規模を拡張し、再生産をすることから、 競争でありながら自分の中で満足できるため、人気のあるものになっている。このタイトルは拡張セットも複数発売されているので、またプレイしたい。</p>
+<p><a href="https://youtu.be/ukSHAEKnFhA">ルール解説動画</a>
+プレイ動画もあるので雰囲気がわかると思う。</p>
+</li>
+<li>
+<p>ボードゲーム Miraris</p>
+<p>Japanで販売されているほとんどが海外からの輸入タイトルと、同人作品である中、数少ない法人タイトルだ。パッケージを見ればひと目で分かる、オタク向けイラスト。これもこのブランドの特徴だ。</p>
+<p>これは軽量級のバッティングゲーム。全員の手札は共通で1~9の数字カードで、これを毎ターン1枚だけ出す。他のプレイヤーと数字がバッティング(競合)しなければ得点し、それが多いプレイヤーの勝利となる。しかしこのタイトルはそれだけじゃあないんだあ。各プレイヤーにはキャラクターカードも配られ、それぞれ特殊能力があるため、それにあったプランを考えるのが面白い。ありそうでなかった丁寧な作品になっている。</p>
+<p><a href="https://youtu.be/brLbx5wkrFY">ルール説明動画</a></p>
+</li>
+</ol>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+~~いかがでしたか?~~
+</body>
+<footer>
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-count="horizontal">Tweet</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</footer>
+
+</html>
