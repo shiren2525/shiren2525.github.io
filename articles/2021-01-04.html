@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>シレンのアトリエ</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/png" href="../static/images_icon/icon_totori.png" sizes="192x192">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shiren2525" />
+  <meta property="og:title" content="シレンのアトリエ" />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/1196387638514573313/N86tYquD_400x400.png" />
+  
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	backface-visibility: hidden;
+	display: block;
+	margin: 2rem auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	font-family: monospace;
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ html {
+    color: #333;    
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+@media (min-width: 1000px) {
+	html {
+		font-size: 16px;
+		margin: 0 auto;
+		max-width: 36rem;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	body {
+	  background-color: #121212;
+	  color: #d9d9d9;
+	}
+	a {
+	  color: #1DA1F2;
+	}
+	img {
+	  filter: grayscale(30%);
+	}
+  }
+
+ body {
+	margin: 0 auto;
+	max-width: 64rem;
+	padding: 2rem 1rem 8rem;
+    word-wrap : break-word;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+time {
+    color: var(--color-light);
+    display: block;
+    font-size: 0.8rem;
+}
+  
+nav ul {
+	font-family: monospace;
+    display: inline;
+    list-style-type: none;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+
+</style>
+
+  <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+        ? 'dark'
+        : 'default'
+    });
+  </script>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="../index.html">Shiren2525.com</a>
+          <a href="../list_articles.html">articles</a>
+          <a href="../profile.html">profile</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h1 id="2020%E5%B9%B4-%E3%82%A2%E3%83%8B%E3%83%A1">2020年 アニメ</h1>
+<p>前々回の記事で書いたけど、抜けがあるのと、アニメとゲームでまとめたかった。
+では、いくぞおおおおお</p>
+<ul>
+<li>放課後さいころ倶楽部</li>
+</ul>
+<p>単純にボドゲのルール解説してくれるから、助かる。6話のプライド高いゲームデザイナーが挫折を乗り越える話は必見。</p>
+<ul>
+<li>響け！ユーフォニアム / 響け！ユーフォニアム2</li>
+</ul>
+<p>人間関係に悩むと、人間ドラマが楽しくなる。</p>
+<ul>
+<li>邪神ちゃんドロップキック</li>
+</ul>
+<p>人格に問題のあるキャラ同士が、それを許容し合う関係がいい。</p>
+<ul>
+<li>逆境無頼カイジ / 破戒録篇</li>
+</ul>
+<p>流行っていた高校生時代に観ておけばよかったなー。底辺に憧れるか、嫌悪するか。</p>
+<ul>
+<li>メイドインアビス</li>
+</ul>
+<p>最高のファンタジー。また劇場版もやってほしい。</p>
+<ul>
+<li>アイカツフレンズ！</li>
+</ul>
+<p>シリーズ屈指の百合作品。これはLGBTへの配慮なのか、性的搾取なのか。</p>
+<ul>
+<li>上坂すみれのヤバい〇〇</li>
+</ul>
+<p>最初は控えめにヤバい上坂すみれが、話数を重ねるごとに暴走するのが面白い。
+内田真礼の回はエモかった、俺も身内クイズやりたい。それができる関係を目指したい。</p>
+<ul>
+<li>Occultic;Nine -オカルティック・ナイン-</li>
+</ul>
+<p>誰かが語る雰囲気がよかったね。</p>
+<ul>
+<li>ダンベル何キロ持てる?</li>
+</ul>
+<p>絶賛しもやけ中なので、健康のために筋トレがしたい。RFAもサボってるなー。</p>
+<ul>
+<li>ダーウィンズゲーム</li>
+</ul>
+<p>シュカちゃん好き。漫画も読んだけど、規模が大きくなって目的が変わってよかった。</p>
+<ul>
+<li>ワールドトリガー</li>
+</ul>
+<p>アニメオリジナルストーリーになるところまで。ゆうまとおさむ尊い。</p>
+<ul>
+<li>ジョジョの奇妙な冒険</li>
+</ul>
+<p>これも流行っていた高校生時代に観ておけばよかったな。格差って触れてはいけないものではなくて、それを題材にした作品に人気なものがあることを知った。</p>
+<ul>
+<li>かぐや様は告らせたい?〜天才たちの恋愛頭脳戦〜</li>
+</ul>
+<p>かぐや様2期、久しぶりのラブコメだったけど、萌え~。</p>
+<ul>
+<li>あそびあそばせ</li>
+</ul>
+<p>3回目か? めちゃくちゃ雰囲気いいね、もはやプリパラ?</p>
+<ul>
+<li>りゅうおうのおしごと！</li>
+</ul>
+<p>なんかめっちゃ良かったと思うw</p>
+<ul>
+<li>ハナヤマタ</li>
+</ul>
+<p>なんか雑になってきた</p>
+<ul>
+<li>キラッとプリ☆チャン シーズン2</li>
+</ul>
+<p>多様性を意識した作品だけど、闇堕ちしたキャラクターを認めなかったことが残念。無配慮に対しては、無配慮になることの必要性を教えてくれた。でもそれって結局は、何が無配慮かってことで争いが起こってしまう。</p>
+<ul>
+<li>NEW GAME! / NEW GAME!!</li>
+</ul>
+<p>主人公が社会人様だから、自分を想像できるいい作品だった。</p>
+<ul>
+<li>神無月の巫女</li>
+</ul>
+<p><s>最高のロボットアニメ</s><br>
+1話で「姫子は俺が守る!!」って叫ぶ男の子と、その横でキスする2人に注目。</p>
+<ul>
+<li>ソードアート・オンライン アリシゼーション / War of Underworld</li>
+</ul>
+<p>仮想世界と現実世界が相互に干渉しているのが最高だった。あとはアリスの生活シーンがもっと見たかった。
+そして、アインクラッドで生き残るために訓練しないとな。
+もう来年だから。</p>
+<h2 id="%E9%AD%82%E3%81%AE%E8%89%B2%E3%81%AF%E4%BD%95%E8%89%B2%E3%81%A7%E3%81%99%E3%81%8B">魂の色は何色ですか?</h2>
+<ul>
+<li>Fate/Zero Fate/stay night [Unlimited Blade Works]</li>
+</ul>
+<p>Zeroが最高だった、中二病時代に勉強していたらハマっていたに違いない。まあ中二病は現役だが。</p>
+<ul>
+<li>鬼滅の刃</li>
+</ul>
+<p>撫子と手を繋いで、紹介先へと歩きはじめるラストは涙なしには見れませんでした。
+そして流れるOP「紅蓮華」
+主題歌のアーティスト最高、LiSAさんパクリはやめてください。</p>
+<ul>
+<li>遊☆戯☆王5D's</li>
+</ul>
+<p>シレン的アニメランキングにおいて、プリパラと共に1位を収める。
+ライディングデュアル、アクセラレーション!!</p>
+<ul>
+<li>魔女の旅々</li>
+</ul>
+<p>問題提起というより、もはや百合w</p>
+<ul>
+<li>汚いハナヤマタ</li>
+</ul>
+<br>
+<ul>
+<li>交響詩篇エウレカセブン</li>
+</ul>
+<p>もはやこれのために書いてる。
+今まで誤解していたことをここで謝罪します。
+申し訳ございませんでいた。</p>
+<p>ロボットアニメというものは戦争。
+つまりロボットアニメの魅力はガシャンガシャン、バンバンだと思っていました。</p>
+<p>しかしこのアニメを見て、それが誤解であったことに気づきました。
+その戦争で生まれる人間ドラマを楽しむものであることに。</p>
+<blockquote>
+<p>音楽とか映画ってその中身がっていうよりも、その時の記憶っていうか、その時の人と、人との記憶を思い出すことが多いだろ。
+つまり記憶というものは、決して単体では存在することなく、それを取り巻く環境に支配されているというわけだ。</p>
+</blockquote>
+<p>とこんな刺さるセリフで始まるこのアニメはボーイミーツガールだった。
+これは伏線というより、キャラクターの環境を想像してほしいということなのか、アニメと同時に思い出したくなるような生活をしてほしいということなのか。
+しかし過去とは自分が成功しているかどうかの比較対象になる憎きもの、それをどう意味づけるかは自分次第。</p>
+<p>メインキャラの恋路はもちろん尊い、しかし僕が泣いたのは…。</p>
+<h1 id="%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%B3%A8%E6%84%8F">ネタバレ注意</h1>
+<p><br><br><br><br>
+<br><br><br><br></p>
+<p>家出のエピソードはひたすらに泣いた。<br>
+思想の対立から、決別の際に何も話さない妻、不満があるようにしか見えなかった。
+夫と死別したとき、抑えていた愛情が憎悪となって溢れ出す。<br>
+「あなたは化け物に取り憑かれてしまったの。でも大丈夫、ママが助けてあげる。だから一緒にチャールズのところへ帰りましょう。」<br>
+先に話したとおり、環境が一つのテーマなのか、孤独な幼少期を経たからこそリフに憧れ、そこで暮らし、洗脳された。</p>
+<p>異星人の影響で不妊症になったと洗脳された妻が、やっとの思いで恵まれたその瞬間に、そのわが子を奪う異星人。その絶望に無限の涙。</p>
+<p>なんと、その設定で作られたシナリオがあるらしいですね!?
+今年公開だから観よう!!</p>
+<h1 id="%E3%83%8D%E3%82%BF%E3%83%90%E3%83%AC%E6%B3%A8%E6%84%8F">ネタバレ注意</h1>
+<p>ピンク髪アネモネ、成果を残さないと処分される彼女は、そのプレッシャーに耐えながら戦っていた。その支えとなる愛は誰に対するものなのか、ツンデレ故なのか、自己防衛だったのか。</p>
+<p>そして遺書のような独白、
+心のなかでは普通に生きたいと望んでいたアネモネ、兵器である自分を受け入れているようで、実はやりたいことがある。人生を諦めているようで、素直になれなかった自分を責めている。それがリアルで切ない。ホント、あーあって感じ。</p>
+<p>そしてついに、ドミニクの登場。</p>
+<p>「ごめん!」</p>
+<p>「いいわ、特別に許してあげる。会いに来てくれた! 救ってくれた!!」</p>
+<p>「救えたのかな?」</p>
+<h2 id="%E6%95%91%E3%81%8A%E3%81%86%E3%81%A8%E3%81%97%E3%81%A6%E3%81%8F%E3%82%8C%E3%81%9F%E5%A4%A7%E5%A3%B0">「救おうとしてくれた!!」(大声)</h2>
+<p>この「救おうとしてくれた」って大声で喜んでいるセリフが最高なんですね。
+さっき独白した問題の数々、それらはドミニクと会うことで解決できるような問題ではないんですね。
+それなのに救おうとしてくれただけで、めちゃくちゃ喜んでいるその姿を見て、本当にドミニクのことが好きだったんだなって思いました。
+しかも会いたいときに出ていかれて、裏切られたと思っていましたからね。</p>
+<p>2人には無限の問題を抱えることになるけど、それらを解決する過程こそが楽しんでもらえたら嬉しい。自分も諦めずに、楽しんでみようかな…。</p>
+
+</body>
+<footer>
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-count="horizontal">Tweet</a>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</footer>
+
+</html>
